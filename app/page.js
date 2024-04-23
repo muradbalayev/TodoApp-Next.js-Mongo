@@ -48,19 +48,22 @@ export default function Home() {
     const name = e.target.name;
     const value = e.target.value;;
     setFormData(form => ({ ...form, [name]: value }));
-    console.log(formData)
   }
 
   const onSubmitHandle = async (e) => {
     e.preventDefault()
     try {
       // api code
-      const response = await axios.post('/api', formData)
-      toast.success(response.data.msg)
-      setFormData({
-        title: "",
-        description: ""
-      });
+      if((formData.title && formData.description) !== ""){
+        const response = await axios.post('/api', formData)
+        toast.success(response.data.msg)
+        setFormData({
+          title: "",
+          description: ""
+        });
+      } else {
+        toast.error("Fill all the inputs")
+      }
       await fetchTodos();
     } catch (error) {
       toast.error("Error")
