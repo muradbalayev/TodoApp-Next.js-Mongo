@@ -88,7 +88,7 @@ export default function Home() {
       </form>
 
 
-      <div className="relative overflow-x-auto mt-8 px-8 w-full mx-auto">
+      <div className="relative overflow-x-auto mt-8 lg:px-8 w-full mx-auto">
         <table className="w-full border rounded-md text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs border text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
